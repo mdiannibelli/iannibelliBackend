@@ -50,7 +50,7 @@ app.put('/api/palabras/:pos', (req,res) =>{
     palabras[pos] = palabra;
 
     res.json({
-        actualizada: palabraas[pos],
+        actualizada: palabras[pos],
         anterior
     })
 
