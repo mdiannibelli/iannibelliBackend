@@ -4,7 +4,7 @@ const app = express();
 const Contenedor = require('./public/Container')
 
 const routerExpress = express.Router();
-const data = new Contenedor('productos.txt');
+const data = new Contenedor('./public/productos.txt');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -14,24 +14,14 @@ app.listen(port, ()=>{
     console.log(`Server running in port ${port}`);
 })
 
-let product = {id: "1",tittle: "Papel",price: "20",thumbnail: "papel.jpg"};
-
 let error = {
     error: false,
     code: 200,
     msg: ''
 }
 
-/* class Productos {
-    constructor(tittle, price, thumbnail, id) {
-        this.tittle = tittle;
-        this.price = price;
-        this.thumbnail = thumbnail;
-        this.id = id;
-    }
-} */
 routerExpress.get("/", async (req, res)=>{
-    const products = await container.getAll()
+    const products = await data.getAll()
     res.json({
         products
     })
@@ -39,7 +29,7 @@ routerExpress.get("/", async (req, res)=>{
 
 routerExpress.get('/:id', async (req,res) =>{
     const idp = parseInt(req.params.id);
-    const productId = await data.getById(id);
+    const productId = await data.getById(idp);
     if(isNaN(idp)) {
         error = {
             error: true,
@@ -69,9 +59,9 @@ routerExpress.post('/', async(req,res) =>{
 
 })
 
-routerExpress.put(':/id', async(req,res) =>{
+routerExpress.put('/:id', async(req,res) =>{
    let { title, price} = req.body;
-   const id = parseint(req.params.id);
+   const id = parseInt(req.params.id);
 
    let product = await data.getById(id);
    product["title"] = title;
@@ -84,9 +74,9 @@ routerExpress.put(':/id', async(req,res) =>{
    }
 
    await data.deleteById(product.id);
-   /* await data.overwrite(newProduct) */
+   await data.overwrite(newProduct)
 
-   if(isNan(id)) {
+   if(isNaN(id)) {
     error = {
         error: true,
         code: 502,
@@ -99,10 +89,10 @@ routerExpress.put(':/id', async(req,res) =>{
 })
 
 routerExpress.delete('/:id', async(req,res) => {
-    const idProduct = parseInt(req.params.id);
-    const product = await data.deleteById(idProduct);
+    const id = parseInt(req.params.id);
+    const product = await data.deleteById(id);
 
-    if(isNaN(idProduct)){
+    if(isNaN(id)){
         error = {
             error: true,
             code: 502,

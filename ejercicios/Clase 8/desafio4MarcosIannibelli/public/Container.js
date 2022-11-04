@@ -23,6 +23,16 @@ class Contenedor {
             console.log("error al obtener los productos")
         }
     }
+    async overwrite(product){
+        try{
+            const products = await this.getAll();
+            products.push(product);
+            await fs.promises.writeFile(this.filename, JSON.stringify(products, null, 2));
+
+            } catch (err){
+                console.log(err);
+            }
+    }
     async save(product){
         try {
             if(fs.existsSync(this.archivo)) {
@@ -51,9 +61,11 @@ class Contenedor {
         try {
             const productos = await this.getAll();
             const deleteProducto = productos.filter(producto => producto.id !== id);
-            return deleteProducto;
+            await fs.promises.writeFile(this.filename, JSON.stringify(deleteProducto, null, 2));
         } catch (error) {
             console.log("No se pudo borrar el producto")
         }
     }
 };
+
+module.exports = Contenedor;
