@@ -1,0 +1,10 @@
+¿Porque prefiero handlebars?
+Una vez hecho el mismo ejercicio con 3 motores de plantillas distintas, en mi opinión handlebars se asemeja mucho al sistema de componentes de ReactJs pero sin complicar la sintáxis.
+De hecho, ni tuve que leer la documentacion para realizar lo que tenía que hacer, en cambio con pug y ejs la documentacion fue muy necesaria ya que posee mas dificultad a la hora de
+escribir el código.
+No logro encontrarle una razón por la cual usar ejs con lo tedioso que es estar atento a cerrar todo el tiempo las lineas de codigo con <% %> y su sintáxis de cuando usar %,- o = ya
+que esto aumenta las probabilidades de error. Pienso que pug podría ser una mejor opción antes que ejs.
+
+1- handlebars
+2- pug
+3- ejs
