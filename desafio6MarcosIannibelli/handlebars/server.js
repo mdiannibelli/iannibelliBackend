@@ -23,11 +23,24 @@ app.set("views", viewFolder);
 app.set("view engine", "handlebars");
 
 //websocket
-
+const messages = [
+    {email:"mdiannibelli@gmail.com", time:"17/11/2022 : 11:34", msg:"Hola buen día"}
+]
 const io = new Server(server);
 
 io.on("connection", async(socket) =>{
     console.log("nuevo cliente conectado")
+    //1- enviar mensajes al cliente
+    socket.emit("messagesChat", messages)
+    //4- recibir msjs del form
+    socket.on("newMessage", (data) =>{
+        messages.push(data);
+
+        //5- enviamos los mensajes a todos los clientes conectados
+        io.sockets.emit("messagesChat", messages)
+    })
+
+
     //cada vez que un cliente se conecte recibira los productos actuales
     socket.emit("products", await data.getAll());
     socket.on("newProduct", async(product) =>{
