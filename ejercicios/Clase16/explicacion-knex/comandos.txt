@@ -1,0 +1,19 @@
+npm i knex mysql
+
+Abrir XAMPP y activar los servers apache y mysql 
+
+Ir a la carpeta donde esta instalado el XAMPP / mysql / bin apretar en la direccion de la carpeta y escribir cmd
+-my sql -u root
+
+create database nombredebasededatos;
+
+show databses; (para verificar que este la base creada)
+
+drop database nombredebasededatos; (para eliminar la base de datos)
+
+use nombredemibase; (para ponernos en la direccion de nuestra base de datos)
+
+show tables; (para mirar las tablas que creamos)
+
+
+npm i sqlite3 para instalar sqlite

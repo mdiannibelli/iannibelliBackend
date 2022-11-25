@@ -1,0 +1,8 @@
+const coches = [
+    {nombre:"Volvo", precio:2300},
+    {nombre:"Audi", precio:5300},
+    {nombre:"Toyota", precio:3300},
+    {nombre:"Mercedez", precio:1300},
+    {nombre:"porshe", precio:4590},
+    {nombre:"ford", precio:4520},
+]
