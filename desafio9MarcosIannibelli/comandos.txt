@@ -48,3 +48,6 @@ db.productos.find().sort({price:1}).limit(1).skip(3)
 db.productos.updateMany({}, {$set: {"stock": 100}})
 db.productos.updateMany({price: {$gte: 300}}, {$set: {"stock": 0}})
 db.productos.deleteMany({price: {$lt: 100}})
+
+use admin
+db.createUser({user: "pepe", pwd: "asd456", roles:[{role: "read", db: "ecommerce"}]})
