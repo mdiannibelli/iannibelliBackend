@@ -15,5 +15,10 @@ use nombredemibase; (para ponernos en la direccion de nuestra base de datos)
 
 show tables; (para mirar las tablas que creamos)
 
+describe nombredelatabla; (te trae la tabla y te la muestra)
+
+select * from productos (te trae los productos de la tabla)
+
 
 npm i sqlite3 para instalar sqlite
+npm i knex mysql sqlite3 //para instalar todo

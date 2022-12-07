@@ -1,0 +1,14 @@
+npm init -y
+npm install webpack webpack-cli
+
+
+//package.json
+"build": "webpack ./archivos --mode=development" u --mode=production
+
+//terminal ejecutar:
+npm run build
+
+//package.json ejecutar el archivo que se creo al empacetar
+"start": "node dist/main.js"
+
+//npm run start

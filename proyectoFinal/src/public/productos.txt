@@ -17,5 +17,23 @@
     "stock": "2",
     "id": 13,
     "timestamp": "24/11/2022"
+  },
+  {
+    "nombre": "sandia",
+    "descripcion": "asdasdsa",
+    "foto": "asdasdsadas",
+    "precio": "1000",
+    "stock": "1",
+    "id": 14,
+    "timestamp": "1/12/2022"
+  },
+  {
+    "nombre": "sandia",
+    "descripcion": "asdasdsaasdasdas",
+    "foto": "asdasdsadassad",
+    "precio": "100012321",
+    "stock": "1",
+    "id": 15,
+    "timestamp": "1/12/2022"
   }
 ]

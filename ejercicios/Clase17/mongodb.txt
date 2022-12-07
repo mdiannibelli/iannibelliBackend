@@ -1,0 +1,11 @@
+-instalar mongodb
+
+entrar a cmd git
+
+mongodb 
+use nombrededb - para crear la base de datos
+show databases;
+show collections - para ver las coleccions
+db.collectionnombre.insertOne({nombre: "pepe", edad:20}) - para crear una coleccion insertOne para insertar uno
+db.collectionnombre.find() - devuelve todos los objetos insertados en la db
+db.collectionnombre.insertMany([{array de objetos}])
