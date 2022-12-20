@@ -1,0 +1,3 @@
+npm i normalizr y express
+
+package.json el type module
