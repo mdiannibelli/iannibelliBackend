@@ -1,14 +1,19 @@
+import mongoose from 'mongoose';
+import { ContenedorDaoCarts, ContenedorDaoProductos } from './daos/fabric.js';
+
 
 const express = require('express');
 const app = express();
 
 //Container y products.txt
 const Contenedor = require('./public/Container');
-const data = new Contenedor('./public/productos.txt');
+/* const data = new Contenedor('./public/productos.txt'); */
+const productosService = ContenedorDaoProductos;
 
 //Carrito y cart
 const CartProducts = require('./public/Cart');
-const carrito = new CartProducts('./public/carrito.json');
+/* const carrito = new CartProducts('./public/carrito.json'); */
+const carritoService = ContenedorDaoCarts;
 
 //routes
 
