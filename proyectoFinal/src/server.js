@@ -1,17 +1,21 @@
 import mongoose from 'mongoose';
+import express from "express";
 import { ContenedorDaoCarts, ContenedorDaoProductos } from './daos/fabric.js';
 
-
-const express = require('express');
+//port
+const port = process.env.port || 8080;
 const app = express();
+app.listen(port, ()=>{
+    console.log(`Servidor escuchando el puerto: ${port}`)
+});
 
 //Container y products.txt
-const Contenedor = require('./public/Container');
+/* const Contenedor = require('./public/Container'); */
 /* const data = new Contenedor('./public/productos.txt'); */
 const productosService = ContenedorDaoProductos;
 
 //Carrito y cart
-const CartProducts = require('./public/Cart');
+/* const CartProducts = require('./public/Cart'); */
 /* const carrito = new CartProducts('./public/carrito.json'); */
 const carritoService = ContenedorDaoCarts;
 
@@ -20,12 +24,6 @@ const carritoService = ContenedorDaoCarts;
 const routerProducts = express.Router();
 const routerCart = express.Router();
 
-//port
-const port = process.env.port || 8080;
-
-app.listen(port, ()=>{
-    console.log(`Server running in port ${port}`);
-});
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());

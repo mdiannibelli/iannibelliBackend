@@ -1,6 +1,6 @@
 import { options } from '../config/databaseConfig.js'
 import mongoose from 'mongoose';
-import admin from "firebase-admin";
+/* import admin from "firebase-admin"; */
 import { CartModel } from '../models/cart.js';
 import { ProductsModel } from '../models/products.js';
 
